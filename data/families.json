@@ -1,0 +1,7 @@
+[
+    { "family": "Kafe (קאפח)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 },
+    { "family": "Shiheb (שחב-שבח)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 },
+    { "family": "Salumi (סלומי-שלומי)", "city": "Al Kafla", "lat": 16.0240, "lng": 43.9790 },
+    { "family": "Afgin (עפג'ין)", "city": "Sa'dah", "lat": 16.9402, "lng": 43.7639 },
+    { "family": "Eraki (עראקי)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 }
+  ]
