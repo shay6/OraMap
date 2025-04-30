@@ -102,3 +102,24 @@ searchInput.addEventListener('input', () => {
     suggestionsBox.appendChild(option);
   });
 });
+
+L.control.logo = function (opts) {
+    return new L.Control.Logo(opts);
+  };
+
+L.Control.Logo = L.Control.extend({
+    onAdd: function () {
+        const div = L.DomUtil.create('div', 'custom-logo');
+        div.innerHTML = `
+        <img src="logo.png" alt="Logo" style="height: 40px; vertical-align: middle;">
+        <span style="margin-left: 8px; font-weight: bold; color: #333;">Shevach</span>
+        `;
+        return div;
+    },
+
+    onRemove: function () {
+        // Nothing to clean up
+    }
+});
+
+L.control.logo({ position: 'bottomleft' }).addTo(map);

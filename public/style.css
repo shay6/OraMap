@@ -72,6 +72,16 @@
   .suggestions div:hover {
     background-color: #95a1a8;
   }
+
+  .custom-logo {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+  }
   
   /* Map container */
   #map {
