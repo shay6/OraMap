@@ -25,36 +25,36 @@ const baseMaps = {
 L.control.layers(baseMaps).addTo(map);
 
 async function searchFamily() {
-  const query = document.getElementById('searchInput').value.trim();
-  if (!query) return;
-
-  const response = await fetch(`/search?family=${encodeURIComponent(query)}`);
-  const results = await response.json();
-
-  clearMarkers();
-
-  if (results.length === 0) {
-    alert('No families found.');
+  const familyName = document.getElementById('searchInput').value.trim();
+  if (!familyName) {
+    alert('Please enter a family name.');
     return;
   }
 
-  results.forEach(fam => {
-    L.marker([fam.lat, fam.lng]).addTo(map)
-      .bindPopup(`<b>${fam.family}</b><br>${fam.city}`)
-      .openPopup();
-  });
-}
+  try {
+    const response = await fetch(`/search?family=${encodeURIComponent(familyName)}`);
+    const familyResult = await response.json();
 
-async function viewAllFamilies() {
-  const response = await fetch(`/search?family=`);
-  const results = await response.json();
+    if (!familyResult.length) {
+      alert('No matching family found.');
+      return;
+    }
 
   clearMarkers();
-
-  results.forEach(fam => {
-    L.marker([fam.lat, fam.lng]).addTo(map)
-      .bindPopup(`<b>${fam.family}</b><br>${fam.city}`);
+  
+  familyResult.forEach(record => {
+    L.marker([record.lat, record.lng]).addTo(map)
+       .bindPopup(`<strong>${record.family}</strong><br>City: ${record.city}`)
+       .openPopup();
   });
+  
+  const first = familyResult[0];
+  map.setView([first.lat, first.lng], 7);
+
+  } catch (error) {
+    console.error('Search error:', error);
+    alert('Something went wrong while searching. Please try again later.');
+    }
 }
 
 function clearMarkers() {
@@ -67,7 +67,7 @@ function clearMarkers() {
 
 const familyNames = [
     "Kafe (קאפח)", "Shiheb (שחב-שבח)", "Eraki (עראקי)", "Salumi (סלומי-שלומי)",
-    "Afgin (עפג'ין)", "Al-Maqtari", "Uzeyri (עוזירי-עזירי)",
+    "Afgin (עפג'ין)", "Al-Maqtari", "Uzeyri (עזירי-עוזרי)",
     "Al-Attas", "Al-Saqqaf"
     // Add more families here if you like
   ];

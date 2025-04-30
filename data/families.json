@@ -1,7 +1,8 @@
 [
     { "family": "Kafe (קאפח)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 },
     { "family": "Shiheb (שחב-שבח)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 },
-    { "family": "Uzeyri (עוזירי-עזירי)", "cities": [{ "city": "Sana'a", "lat": 15.3694, "lng": 44.1910 }, { "city": "Dhamar", "lat": 14.5424, "lng": 44.4056 } ] },
+    { "family": "Uzeyri (עזירי-עוזרי)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 },
+    { "family": "Uzeyri (עזירי-עוזרי)", "city": "Dhamar", "lat": 14.5424, "lng": 44.4056 },
     { "family": "Salumi (סלומי-שלומי)", "city": "Al Kafla", "lat": 16.0240, "lng": 43.9790 },
     { "family": "Afgin (עפג'ין)", "city": "Sa'dah", "lat": 16.9402, "lng": 43.7639 },
     { "family": "Eraki (עראקי)", "city": "Sana'a", "lat": 15.3545, "lng": 44.2064 }
