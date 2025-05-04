@@ -67,8 +67,7 @@ function clearMarkers() {
 
 const familyNames = [
     "Kafe (קאפח)", "Shiheb (שחב-שבח)", "Eraki (עראקי)", "Salumi (סלומי-שלומי)",
-    "Afgin (עפג'ין)", "Al-Maqtari", "Uzeyri (עזירי-עוזרי)",
-    "Al-Attas", "Al-Saqqaf"
+    "Afgin (עפג'ין)", "Uzeyri (עזירי-עוזרי)"
     // Add more families here if you like
   ];
   
