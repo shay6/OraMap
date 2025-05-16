@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: harbor.dvirlabs.com/shay/oramap
+  tag: "1"
+  pullPolicy: IfNotPresent
+
+containerPort: 3000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  className: "traefik"
+  hosts:
+    - host: oramap.dvirlabs.com
+      paths:
+        - path: /
+          pathType: Prefix
+  tls: []
